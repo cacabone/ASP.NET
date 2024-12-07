@@ -1,0 +1,59 @@
+﻿@page
+@using ASP.NET.Models
+@model ASP.NET.Pages.StudentsModel
+@{
+	<h1>Register a Student</h1>
+
+	<form method="post">
+		
+		<label>First Name</label>
+		<input type="text" name="firstname"><input>
+
+		<label>Last Name</label>
+		<input type="text" name="lastname"><input>
+
+		<label>Age</label>
+		<input type="number" name="age"><input>
+
+		<button type="submit">Save</button>
+	
+	</form>
+
+	<table class="table">
+	<thead>
+	<tr>
+				<th>Id</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Age</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+
+		@foreach(Student student in Model.StudentsList)
+		{
+			<tr>				
+					<td>
+						@student.Id
+					</td>
+					
+					<td>
+						@student.FirstName
+					</td>
+
+					<td>
+						@student.LastName
+					</td>
+
+					<td>
+						@student.Age
+					</td>
+			</tr>
+			
+		}
+
+	</tbody>
+
+	</table>
+}
